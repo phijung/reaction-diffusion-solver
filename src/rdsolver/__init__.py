@@ -24,7 +24,6 @@ def gray_scott(backend="numpy", params=None, **kwargs):
 
     p = default_params()
 
-
     if params is not None:
         p.update(params)
 
