@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 def main():
     u, v = gray_scott(
         backend="numpy",
-        grid_size=150,
+        grid_size=250,
         steps=10000,
         time_step=1,
         u_diffusion=0.16,
