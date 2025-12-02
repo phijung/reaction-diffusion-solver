@@ -1,5 +1,3 @@
-import numpy as np
-
 from src.rdsolver.solvers.euler_base import ExplicitEulerBase
 
 class ExplicitEulerPure(ExplicitEulerBase):
