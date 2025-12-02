@@ -1,1 +1,1 @@
-# reaction-diffusion-solver
+![Mitosis Example](./mitosis_example_picture.png)
