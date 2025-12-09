@@ -242,3 +242,8 @@ $RECYCLE.BIN/
 # General
 *.swp
 *.swo
+
+# example files
+
+flower_example.py
+mitosis_example.py
