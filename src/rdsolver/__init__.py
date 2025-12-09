@@ -1,7 +1,7 @@
 """
 API for the solver.
 """
-
+from rdsolver.solvers.euler_numba import ExplicitEulerNumba
 from src.rdsolver.config import default_params
 from src.rdsolver.solvers.euler_pure_python import ExplicitEulerPure
 from src.rdsolver.solvers.euler_numpy import ExplicitEulerNumPy
@@ -41,6 +41,11 @@ def gray_scott(backend="numpy", params=None, **kwargs):
 
     if backend == "numpy":
         solver = ExplicitEulerNumPy(p)
+
+        return solver.solve(u_initial, v_initial)
+
+    if backend == "numba":
+        solver = ExplicitEulerNumba(p)
 
         return solver.solve(u_initial, v_initial)
 
