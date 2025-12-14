@@ -1,7 +1,7 @@
 """
 API for the solver.
 """
-from rdsolver.solvers.euler_numba import ExplicitEulerNumba
+from src.rdsolver.solvers.euler_numba import ExplicitEulerNumba
 from src.rdsolver.config import default_params
 from src.rdsolver.solvers.euler_pure_python import ExplicitEulerPure
 from src.rdsolver.solvers.euler_numpy import ExplicitEulerNumPy
