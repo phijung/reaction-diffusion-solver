@@ -246,4 +246,7 @@ $RECYCLE.BIN/
 # example files
 
 flower_example.py
-mitosis_example.py
+example.py
+
+# data files
+*.pkl
