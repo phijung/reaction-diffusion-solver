@@ -1,6 +1,5 @@
 from src.rdsolver.solvers.euler_base import ExplicitEulerBase
-import laplacian_pybind
-import numpy as np
+from laplacian_pybind import laplacian_serial
 
 class ExplicitEulerPybind(ExplicitEulerBase):
     """
@@ -8,4 +7,4 @@ class ExplicitEulerPybind(ExplicitEulerBase):
     """
 
     def laplacian(self, conc):
-        return laplacian_pybind.laplacian_pybind(conc)
+        return laplacian_serial(conc)

@@ -1,8 +1,8 @@
 from src.rdsolver.solvers.euler_base import ExplicitEulerBase
 
-class ExplicitEulerParallel(ExplicitEulerBase):
+class ExplicitEulerNumbaParallel(ExplicitEulerBase):
     """
-    Parallelized backend.
+    Backend in parallelized numba.
     """
 
     def laplacian(self, conc):
