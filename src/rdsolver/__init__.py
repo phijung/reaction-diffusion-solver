@@ -6,6 +6,7 @@ from src.rdsolver.config import default_params
 from src.rdsolver.solvers.euler_pure_python import ExplicitEulerPure
 from src.rdsolver.solvers.euler_numpy import ExplicitEulerNumPy
 from src.rdsolver.model.initial_conditions import create_initial_conditions
+from src.rdsolver.solvers.euler_pybind import ExplicitEulerPybind
 
 PARAM_MAP = {
     "grid_size": "GRID_SIZE",
@@ -46,6 +47,11 @@ def gray_scott(backend="numpy", params=None, **kwargs):
 
     if backend == "numba":
         solver = ExplicitEulerNumba(p)
+
+        return solver.solve(u_initial, v_initial)
+
+    if backend == "pybind":
+        solver = ExplicitEulerPybind(p)
 
         return solver.solve(u_initial, v_initial)
 
