@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
 from src.rdsolver import config
+from src.rdsolver.utils.pattern_plotting import pattern_plot
 import numpy as np
 from tqdm import tqdm
+
 
 class ExplicitEulerBase(ABC):
     """
@@ -19,6 +21,7 @@ class ExplicitEulerBase(ABC):
         self.u_diff = self.params["U_DIFFUSION"]
         self.v_diff = self.params["V_DIFFUSION"]
         self.grid_size = self.params["GRID_SIZE"]
+        self.animation = self.params["ANIMATION"]
 
     @abstractmethod
     def laplacian(self, conc):
@@ -53,7 +56,13 @@ class ExplicitEulerBase(ABC):
         Run the solver for a given amount of time steps.
         """
 
-        for _ in tqdm(range(self.num_steps)):
-            u_conc, v_conc = self.euler_step(u_conc, v_conc)
+        if self.animation:
+            for i in range(self.num_steps):
+                u_conc, c_conc = self.euler_step(u_conc, v_conc)
+                if i%50 == 0:
+                    pattern_plot(v_conc)
+        else:
+            for _ in tqdm(range(self.num_steps)):
+                u_conc, v_conc = self.euler_step(u_conc, v_conc)
 
         return u_conc, v_conc

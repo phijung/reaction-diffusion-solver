@@ -18,6 +18,7 @@ PARAM_MAP = {
     "kill_rate": "KILL_RATE",
     "u_diff": "U_DIFFUSION",
     "v_diff": "V_DIFFUSION",
+    "animation": "ANIMATION",
 }
 
 def gray_scott(backend="numpy", params=None, **kwargs):
