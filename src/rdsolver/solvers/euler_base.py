@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from src.rdsolver import config
-from src.rdsolver.utils.pattern_plotting import pattern_plot
+from rdsolver import config
+from rdsolver.utils.pattern_plotting import pattern_plot
 import numpy as np
 from tqdm import tqdm
 

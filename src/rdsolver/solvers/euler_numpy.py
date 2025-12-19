@@ -1,4 +1,4 @@
-from src.rdsolver.solvers.euler_base import ExplicitEulerBase
+from rdsolver.solvers.euler_base import ExplicitEulerBase
 import numpy as np
 
 class ExplicitEulerNumPy(ExplicitEulerBase):

@@ -1,5 +1,5 @@
 import timeit
-from src.rdsolver import gray_scott
+from rdsolver import gray_scott
 import pandas as pd
 import gc
 

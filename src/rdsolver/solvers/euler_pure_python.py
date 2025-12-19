@@ -1,4 +1,4 @@
-from src.rdsolver.solvers.euler_base import ExplicitEulerBase
+from rdsolver.solvers.euler_base import ExplicitEulerBase
 
 class ExplicitEulerPure(ExplicitEulerBase):
     """

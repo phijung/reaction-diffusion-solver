@@ -1,4 +1,4 @@
-from src.rdsolver.solvers.euler_base import ExplicitEulerBase
+from rdsolver.solvers.euler_base import ExplicitEulerBase
 from laplacian_pybind import laplacian_serial
 
 class ExplicitEulerPybind(ExplicitEulerBase):

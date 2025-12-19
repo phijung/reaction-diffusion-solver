@@ -243,10 +243,5 @@ $RECYCLE.BIN/
 *.swp
 *.swo
 
-# example files
-
-flower_example.py
-example.py
-
 # data files
 *.pkl

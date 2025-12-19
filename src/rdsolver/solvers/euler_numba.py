@@ -1,6 +1,6 @@
 from numba import njit
 import numpy as np
-from src.rdsolver.solvers.euler_base import ExplicitEulerBase
+from rdsolver.solvers.euler_base import ExplicitEulerBase
 
 @njit
 def laplacian_numba(conc):
