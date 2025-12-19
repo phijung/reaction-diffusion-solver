@@ -58,9 +58,11 @@ class ExplicitEulerBase(ABC):
 
         if self.animation:
             for i in range(self.num_steps):
-                u_conc, c_conc = self.euler_step(u_conc, v_conc)
+                u_conc, v_conc = self.euler_step(u_conc, v_conc)
+                
                 if i%50 == 0:
                     pattern_plot(v_conc)
+                
         else:
             for _ in tqdm(range(self.num_steps)):
                 u_conc, v_conc = self.euler_step(u_conc, v_conc)
