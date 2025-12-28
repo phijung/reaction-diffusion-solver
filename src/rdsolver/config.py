@@ -10,6 +10,7 @@ def default_params():
         "U_DIFFUSION": 0.16,
         "V_DIFFUSION": 0.08,
         "ANIMATION": True,
+        "ANIMATION_FILE_NAME": "pattern.gif",
 
     }
     return params

@@ -19,6 +19,7 @@ PARAM_MAP = {
     "u_diff": "U_DIFFUSION",
     "v_diff": "V_DIFFUSION",
     "animation": "ANIMATION",
+    "animation_file_name": "ANIMATION_FILE_NAME",
 }
 
 def gray_scott(backend="numpy", params=None, **kwargs):
