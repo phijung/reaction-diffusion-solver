@@ -49,10 +49,11 @@ def spirals():
     u, v = gray_scott(
         backend="numba",
         grid_size=500,
-        steps=50_000,
+        steps=25_000,
         feed_rate=0.014,
         kill_rate=0.047,
         animation=True,
+        animation_file_name="spiral.gif",
     )
 
 if __name__ == "__main__":

@@ -14,14 +14,14 @@ def benchmark(grid_sizes: list[int], backends: list[str], repeats: int):
     gc.disable()
 
     for grid_size in grid_sizes:
-
         for backend in backends:
+            print(f"Benchmarking for Backend {backend} with grid size {grid_size}")
 
             # Warmup
-            gray_scott(grid_size=grid_size, backend=backend, steps=100)
+            gray_scott(grid_size=grid_size, backend=backend, steps=100, animation=False)
 
             # Benchmarking
-            times = timeit.repeat(stmt=lambda: gray_scott(grid_size=grid_size, backend=backend, steps=100),
+            times = timeit.repeat(stmt=lambda: gray_scott(grid_size=grid_size, backend=backend, steps=100, animation=False),
                                   repeat=repeats,
                                   number= 1
             )
@@ -43,6 +43,6 @@ def benchmark(grid_sizes: list[int], backends: list[str], repeats: int):
 
 if __name__ == "__main__":
 
-    benchmark([25000],
-              ["pybind", "pybind_parallel"],
-              1)
+    benchmark([50, 100, 250, 500, 750, 1000, 2500, 5000, 10000],
+              ["numpy", "numba", "pybind", "pybind_parallel"],
+              10)

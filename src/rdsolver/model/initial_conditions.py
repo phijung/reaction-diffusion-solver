@@ -1,6 +1,6 @@
 import numpy as np
 
-def create_initial_conditions(size: int, noise_seed: int = None) -> tuple[np.ndarray, np.ndarray]:
+def create_initial_conditions(size: int, noise_seed: int = 42) -> tuple[np.ndarray, np.ndarray]:
     """
     Create initial field for Gray-Scott with a single v spot in the center,
     plus optional random noise.
