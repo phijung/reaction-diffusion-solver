@@ -10,7 +10,7 @@ def benchmark(grid_sizes: list[int], backends: list[str], repeats: int):
     """
 
     data: list = []
-    # timeit should disable the garbage collector, but it seems, this does not work properly, or i am to dumb for timeit?
+    # timeit should disable the garbage collector, but it seems, this does not work properly, or I am too dumb for timeit?
     gc.disable()
 
     for grid_size in grid_sizes:
@@ -44,5 +44,5 @@ def benchmark(grid_sizes: list[int], backends: list[str], repeats: int):
 if __name__ == "__main__":
 
     benchmark([50, 100, 250, 500, 750, 1000, 2500, 5000, 10000],
-              ["numpy", "numba", "pybind", "pybind_parallel"],
+              ["python", "numpy", "numba", "pybind", "pybind_parallel"],
               10)
