@@ -1,13 +1,13 @@
 """
 API for the solver.
 """
+
 from rdsolver.solvers.euler_numba import ExplicitEulerNumba
 from rdsolver.config import default_params
 from rdsolver.solvers.euler_pure_python import ExplicitEulerPure
 from rdsolver.solvers.euler_numpy import ExplicitEulerNumPy
 from rdsolver.model.initial_conditions import create_initial_conditions
 from rdsolver.solvers.euler_pybind import ExplicitEulerPybind
-from rdsolver.solvers.euler_numba_parallel import ExplicitEulerNumbaParallel
 from rdsolver.solvers.euler_pybind_parallel import ExplicitEulerPybindParallel
 
 PARAM_MAP = {
@@ -21,6 +21,7 @@ PARAM_MAP = {
     "animation": "ANIMATION",
     "animation_file_name": "ANIMATION_FILE_NAME",
 }
+
 
 def gray_scott(backend="numpy", params=None, **kwargs):
     """
@@ -61,7 +62,7 @@ def gray_scott(backend="numpy", params=None, **kwargs):
 
     if backend == "numpy_parallel":
         solver = ExplicitEulerNumbaParallel(p)
-        
+
         return solver.solve(u_initial, v_initial)
 
     if backend == "pybind_parallel":
@@ -74,4 +75,3 @@ def gray_scott(backend="numpy", params=None, **kwargs):
 
 
 __all__ = ["gray_scott"]
-
