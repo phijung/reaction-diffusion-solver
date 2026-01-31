@@ -1,9 +1,7 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/numpy.h>
+#include <omp.h>
 
-#ifdef _OPENMP
-  #include <omp.h>
-#endif
 
 namespace py = pybind11;
 
