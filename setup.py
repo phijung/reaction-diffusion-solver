@@ -2,6 +2,7 @@ from setuptools import setup, Extension
 import pybind11
 import sys
 
+ext_modules = []
 
 if sys.platform == "linux":
     compile_args = ["-std=c++17", "-O3", "-fopenmp"]
