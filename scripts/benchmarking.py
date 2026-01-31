@@ -21,9 +21,12 @@ def benchmark(grid_sizes: list[int], backends: list[str], repeats: int):
             gray_scott(grid_size=grid_size, backend=backend, steps=100, animation=False)
 
             # Benchmarking
-            times = timeit.repeat(stmt=lambda: gray_scott(grid_size=grid_size, backend=backend, steps=100, animation=False),
-                                  repeat=repeats,
-                                  number= 1
+            times = timeit.repeat(
+                stmt=lambda: gray_scott(
+                    grid_size=grid_size, backend=backend, steps=100, animation=False
+                ),
+                repeat=repeats,
+                number=1,
             )
 
             row = {"grid_size": grid_size, "backend": backend}
@@ -38,11 +41,8 @@ def benchmark(grid_sizes: list[int], backends: list[str], repeats: int):
     df.set_index(["grid_size", "backend"], inplace=True)
     df.to_pickle("benchmark.pkl")
     print(df)
-    #print(df.reset_index())
+    # print(df.reset_index())
 
 
 if __name__ == "__main__":
-
-    benchmark([50, 100, 250, 500, 750, 1000, 2500, 5000, 10000],
-              ["python", "numpy", "numba", "pybind", "pybind_parallel"],
-              10)
+    benchmark([50, 100, 250, 500], ["python", "numpy", "numba"], 10)
