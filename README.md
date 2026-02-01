@@ -36,9 +36,9 @@ expect potential compatibility issues.
 ## Usage
 
 An example script demonstrating how to use the library is provided in the `scripts` folder as `example_gray_scott.py`.
-This script shows a typical workflow for running a Gray–Scott simulation. All the parameters are optional,
-if none are given, the solver falls back to default parameters. It does this also, when only a few parameters are given,
-the others are used from the fallback option.
+This script illustrates a typical workflow for running a Gray Scott simulation.
+All parameters are optional, if none are specified, the solver uses default values.
+When only some parameters are provided, the unspecified ones automatically fall back to their defaults.
 
 The main parameters to control the simulation are:
 
@@ -75,7 +75,3 @@ The following parameter combinations produce characteristic patterns in the Gray
 The library was benchmarked across multiple backends and grid sizes. A full table of the benchmarking results is 
 available in [`results/benchmark_results.pdf`](results/benchmark_results.pdf). 
 This includes measured runtimes for the backends (NumPy, Numba, pybind, pybind + OpenMP) on various grid sizes.
-
-## License
-
-This project is licensed under the MIT License.
